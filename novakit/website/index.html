@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b14">
+  <meta name="description" content="NOVAKIT brings your everyday tools together in one focused workspace.">
+  <title>NOVAKIT — Everything in one place</title>
+  <link rel="icon" href="./novakit-favicon.png">
+  <style>
+    :root{color-scheme:dark;--bg:#080b14;--panel:#101727;--muted:#9aa8bf;--text:#f4f7ff;--blue:#5b8cff;--cyan:#55d6ff;--line:rgba(158,180,220,.15)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 78% 8%,rgba(53,94,190,.22),transparent 34%),radial-gradient(ellipse at 12% 38%,rgba(90,57,180,.13),transparent 30%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1120px,calc(100% - 40px));margin:auto}.nav{height:78px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.12em}.brand img{width:38px;height:38px;object-fit:contain;border-radius:11px}.navlinks{display:flex;gap:26px;color:var(--muted);font-size:14px}.navlinks a:hover{color:white}
+    .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:92px 0 76px}.eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(91,140,255,.3);background:rgba(91,140,255,.09);padding:7px 12px;border-radius:999px;color:#b9ceff;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}.dot{width:7px;height:7px;border-radius:50%;background:#69d7ff;box-shadow:0 0 12px #69d7ff}.hero h1{font-size:clamp(44px,6vw,72px);line-height:1.02;letter-spacing:-.055em;margin:22px 0}.gradient{background:linear-gradient(100deg,#fff 8%,#9bbcff 50%,#7de3ff);-webkit-background-clip:text;background-clip:text;color:transparent}.lead{font-size:18px;color:var(--muted);max-width:560px}.actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:30px}.btn{display:inline-flex;justify-content:center;align-items:center;gap:10px;padding:13px 19px;border-radius:13px;font-weight:750;font-size:14px;border:1px solid var(--line);transition:.2s}.btn.primary{background:linear-gradient(110deg,#477cff,#7256e8);border:0;box-shadow:0 12px 35px rgba(75,111,255,.28)}.btn:hover{transform:translateY(-2px)}.btn.secondary{background:rgba(255,255,255,.035)}.hint{color:#77869e;font-size:12px;margin-top:14px}
+    .preview{position:relative;min-height:430px;display:grid;place-items:center}.glow{position:absolute;width:330px;height:330px;background:#416bff;filter:blur(115px);opacity:.23}.mock{position:relative;width:min(340px,88%);padding:13px;border-radius:32px;border:1px solid rgba(180,202,255,.25);background:linear-gradient(145deg,#1a2740,#0b1020 65%);box-shadow:0 30px 90px rgba(0,0,0,.55),inset 0 1px rgba(255,255,255,.12);transform:rotate(3deg)}.screen{border-radius:22px;background:#0b1221;padding:22px;min-height:390px}.screenhead{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.1em}.screenhead img{width:32px;height:32px;border-radius:9px}.screen small{color:#7f91ae}.screen h3{font-size:25px;line-height:1.15;margin:25px 0 5px}.screen p{font-size:12px;color:#8494ad}.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:23px}.tile{border:1px solid rgba(160,184,230,.13);background:linear-gradient(145deg,#17243b,#10192a);padding:15px;border-radius:15px}.tile b{display:block;font-size:13px;margin-top:9px}.tile span{font-size:20px}
+    section{padding:74px 0}.section-title{text-align:center;max-width:650px;margin:0 auto 38px}.section-title h2{font-size:clamp(30px,4vw,43px);letter-spacing:-.04em;margin:0 0 10px}.section-title p{color:var(--muted);margin:0}.features{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.feature{padding:22px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,rgba(22,34,57,.86),rgba(12,18,32,.82));min-height:175px}.feature .ico{font-size:23px}.feature h3{font-size:16px;margin:14px 0 5px}.feature p{font-size:13px;color:var(--muted);margin:0}.download{border:1px solid rgba(110,150,255,.23);border-radius:26px;padding:42px;background:radial-gradient(ellipse at 90% 10%,rgba(74,108,255,.22),transparent 42%),#101827;text-align:center}.download h2{font-size:clamp(30px,4vw,42px);margin:0 0 10px}.download p{color:var(--muted);margin:0 auto 23px;max-width:570px}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.step{border:1px solid var(--line);border-radius:17px;padding:20px;background:rgba(255,255,255,.025)}.num{color:#8fb4ff;font-size:12px;font-weight:800;letter-spacing:.1em}.step h3{font-size:16px;margin:9px 0 5px}.step p{font-size:13px;color:var(--muted);margin:0}.footer{border-top:1px solid var(--line);padding:28px 0;color:#7e8ca4;font-size:12px;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+    @media(max-width:850px){.hero{grid-template-columns:1fr;gap:20px;padding-top:65px}.preview{min-height:390px}.features{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.wrap{width:min(100% - 28px,1120px)}.nav{height:66px}.navlinks{gap:13px;font-size:12px}.navlinks a:nth-child(2){display:none}.hero{padding:52px 0 35px}.lead{font-size:16px}.preview{min-height:360px}.screen{min-height:350px}.features,.steps{grid-template-columns:1fr 1fr}.feature{padding:16px}.download{padding:30px 18px}.footer{display:block}.footer span{display:block;margin:5px 0}}@media(max-width:390px){.features,.steps{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header class="wrap nav">
+    <a class="brand" href="./"><img src="./novakit-app-icon.png" alt="NOVAKIT logo"> NOVAKIT</a>
+    <nav class="navlinks"><a href="#features">Features</a><a href="#install">Install</a><a href="#download">Download</a></nav>
+  </header>
+  <main>
+    <div class="wrap hero">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Your everyday toolkit</div>
+        <h1>One app.<br><span class="gradient">More done.</span></h1>
+        <p class="lead">Bring your everyday tools together in one clean, focused workspace. Plan your day, keep track of habits and expenses, and get things done with NOVAKIT.</p>
+        <div class="actions">
+          <a class="btn primary" href="https://github.com/pcxguruu/NOVAKIT/releases" target="_blank" rel="noreferrer">↓ &nbsp; Get NOVAKIT</a>
+          <a class="btn secondary" href="./app/">Open Web App ↗</a>
+        </div>
+        <div class="hint">Android APK releases will appear on the GitHub Releases page.</div>
+      </div>
+      <div class="preview" aria-label="NOVAKIT app preview">
+        <div class="glow"></div>
+        <div class="mock"><div class="screen">
+          <div class="screenhead"><img src="./novakit-app-icon.png" alt=""> NOVAKIT</div>
+          <small>YOUR PERSONAL WORKSPACE</small>
+          <h3>Make today<br>count.</h3><p>Your tools, organized in one place.</p>
+          <div class="tiles">
+            <div class="tile"><span>✓</span><b>Planner</b></div><div class="tile"><span>✎</span><b>Notes</b></div>
+            <div class="tile"><span>₹</span><b>Expenses</b></div><div class="tile"><span>↗</span><b>Analytics</b></div>
+            <div class="tile"><span>◎</span><b>Habits</b></div><div class="tile"><span>▦</span><b>QR Tools</b></div>
+          </div>
+        </div></div>
+      </div>
+    </div>
+    <section id="features">
+      <div class="wrap">
+        <div class="section-title"><h2>Everything in your flow.</h2><p>A practical set of tools designed to keep everyday tasks organized without the clutter.</p></div>
+        <div class="features">
+          <article class="feature"><div class="ico">✎</div><h3>Notes</h3><p>Capture ideas and keep important information together.</p></article>
+          <article class="feature"><div class="ico">▣</div><h3>Planner</h3><p>Organize tasks and bring structure to your day.</p></article>
+          <article class="feature"><div class="ico">₹</div><h3>Expenses</h3><p>Record spending and review where your money goes.</p></article>
+          <article class="feature"><div class="ico">▥</div><h3>Analytics</h3><p>See useful summaries of your tracked activity.</p></article>
+          <article class="feature"><div class="ico">◎</div><h3>Habit Tracker</h3><p>Build consistency by keeping an eye on your routines.</p></article>
+          <article class="feature"><div class="ico">⌁</div><h3>Study Mode</h3><p>Keep study sessions and learning tasks organized.</p></article>
+          <article class="feature"><div class="ico">▦</div><h3>QR Tools</h3><p>Use handy QR creation and scanning tools.</p></article>
+          <article class="feature"><div class="ico">✦</div><h3>One workspace</h3><p>Move between everyday tools from one familiar place.</p></article>
+        </div>
+      </div>
+    </section>
+    <section id="download">
+      <div class="wrap"><div class="download">
+        <h2>Ready to get organized?</h2>
+        <p>Get the latest NOVAKIT build from the official GitHub Releases page. Check the release notes and download the Android APK when a release is published.</p>
+        <a class="btn primary" href="https://github.com/pcxguruu/NOVAKIT/releases" target="_blank" rel="noreferrer">View official downloads ↗</a>
+      </div></div>
+    </section>
+    <section id="install">
+      <div class="wrap">
+        <div class="section-title"><h2>Get started in three steps.</h2><p>Install NOVAKIT from an official release and follow the on-screen setup.</p></div>
+        <div class="steps">
+          <article class="step"><div class="num">STEP 01</div><h3>Download</h3><p>Open the official Releases page and choose the latest Android APK.</p></article>
+          <article class="step"><div class="num">STEP 02</div><h3>Install</h3><p>Open the downloaded APK and follow Android's installation prompts.</p></article>
+          <article class="step"><div class="num">STEP 03</div><h3>Start using</h3><p>Launch NOVAKIT and explore the tools in your workspace.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap footer"><span>© <span id="year"></span> NOVAKIT. All rights reserved.</span><span>Built to bring your everyday tools together.</span><span><a href="https://github.com/pcxguruu/NOVAKIT">GitHub</a> · <a href="https://github.com/pcxguruu/NOVAKIT/issues">Support</a></span></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

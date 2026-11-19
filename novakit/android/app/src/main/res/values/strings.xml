@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">NOVAKIT</string>
+    <string name="title_activity_main">NOVAKIT</string>
+    <string name="package_name">com.novakit.app</string>
+    <string name="custom_url_scheme">com.novakit.app</string>
+</resources>
