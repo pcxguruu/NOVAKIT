@@ -578,7 +578,7 @@ function App() {
         <div className="brand">
           <div className="brand-icon">
             <img
-              src="/novakit-app-icon.png"
+            src={`${import.meta.env.BASE_URL}novakit-app-icon.png`}
               alt="NOVAKIT"
               style={{
                 width: "100%",
