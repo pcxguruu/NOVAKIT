@@ -3,12 +3,12 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  apiKey:"AIzaSyDVGWamBKS8r6kjOCoEQkLqgH9yvNRUqaI",
+  authDomain:"novakit-5430f.firebaseapp.com",
+  projectId:"novakit-5430f",
+  storageBucket: "novakit-5430f.firebasestorage.app",
+  messagingSenderId:  "1019754888988",
+  appId:"1:1019754888988:web:fb9d061976d038aed2c4d9",
 };
 
 const missingConfig = Object.entries(firebaseConfig)
