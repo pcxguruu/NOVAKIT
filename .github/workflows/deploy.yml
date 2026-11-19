@@ -1,5 +1,4 @@
-
-name: Deploy NOVAKIT
+name: Deploy NOVAKIT Website and Web App
 
 on:
   push:
@@ -18,10 +17,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./novakit
-
     steps:
       - uses: actions/checkout@v4
 
@@ -31,15 +26,29 @@ jobs:
           cache: npm
           cache-dependency-path: novakit/package-lock.json
 
-      - run: npm ci
+      - name: Install app dependencies
+        working-directory: ./novakit
+        run: npm ci
 
-      - run: npm run build
+      - name: Build NOVAKIT web app for /app/
+        working-directory: ./novakit
+        run: npm run build
+        env:
+          VITE_BASE_PATH: /NOVAKIT/app/
+
+      - name: Assemble website and app
+        run: |
+          mkdir -p site/app
+          cp -R novakit/website/. site/
+          cp -R novakit/public/. site/
+          cp -R novakit/dist/. site/app/
+          touch site/.nojekyll
 
       - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ./novakit/dist
+          path: ./site
 
   deploy:
     needs: build
@@ -48,6 +57,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
