@@ -1,0 +1,391 @@
+
+/* NOVAKIT COMPLETE APP ADDITIONS */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.stat-card,
+.finance-card {
+  background: linear-gradient(145deg, #211632, #120f1c);
+  border: 1px solid #49315e;
+  border-radius: 14px;
+  padding: 20px;
+  min-width: 0;
+}
+
+.stat-card span,
+.finance-card span {
+  color: #aaa0ba;
+  font-size: 12px;
+}
+
+.stat-card h2,
+.finance-card h2 {
+  margin-top: 13px;
+  font-size: 23px;
+  color: #d5a4ff;
+  overflow-wrap: anywhere;
+}
+
+.stat-card small {
+  display: block;
+  margin-top: 8px;
+  color: #81758f;
+}
+
+.page-panel {
+  margin-top: 22px;
+}
+
+.muted {
+  display: block;
+  color: #aaa2bc;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.note-content {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.6;
+  margin: 12px 0 !important;
+}
+
+.button-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 12px;
+}
+
+.secondary-btn {
+  background: #30213f;
+  color: #e5d4f7;
+  border: 1px solid #57406e;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.secondary-btn:hover {
+  background: #49305f;
+}
+
+.primary-btn,
+.delete-btn {
+  cursor: pointer;
+}
+
+.finance-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+  margin-top: 22px;
+}
+
+.income-text {
+  color: #58e5a1 !important;
+}
+
+.expense-text {
+  color: #ff8199 !important;
+}
+
+.transaction-list {
+  margin-top: 18px;
+}
+
+.transaction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 0;
+  border-bottom: 1px solid #302442;
+}
+
+.transaction p {
+  color: #92889f;
+  font-size: 11px;
+  margin-top: 6px;
+}
+
+.transaction-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.task-row {
+  justify-content: space-between;
+  border-bottom: 1px solid #302442;
+  padding: 12px 0;
+}
+
+.task-row label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.task-date {
+  display: block;
+  color: #9588a8;
+  font-size: 10px;
+  margin-top: 5px;
+}
+
+.habit-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.habit-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  border-bottom: 1px solid #302442;
+  padding: 12px 0;
+}
+
+.habit-row strong,
+.habit-row small {
+  display: block;
+}
+
+.focus-timer {
+  margin-top: 22px;
+  text-align: center;
+  padding: 35px 20px;
+}
+
+.timer-display {
+  font-size: clamp(55px, 10vw, 85px);
+  font-weight: 800;
+  color: #d5a4ff;
+  letter-spacing: 4px;
+  margin: 20px 0;
+  text-shadow: 0 0 25px #a14cff55;
+}
+
+.timer-settings {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: #aaa2bc;
+  font-size: 12px;
+}
+
+.timer-settings select,
+.note-input,
+.search-input {
+  color: white;
+}
+
+.timer-settings select,
+.note-input,
+select.note-input {
+  background-color: #0c0a13;
+}
+
+.timer-settings select {
+  border: 1px solid #49315e;
+  padding: 9px;
+  border-radius: 8px;
+}
+
+.timer-buttons {
+  justify-content: center;
+}
+
+.field-label {
+  display: block;
+  color: #aaa2bc;
+  font-size: 12px;
+  margin-top: 18px;
+}
+
+.empty-state {
+  color: #aaa2bc;
+  margin-top: 22px;
+  text-align: center;
+  line-height: 1.7;
+}
+
+@media (max-width: 1000px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .stats-grid,
+  .finance-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .transaction,
+  .habit-row {
+    align-items: flex-start;
+  }
+
+  .transaction-right {
+    justify-content: flex-end;
+  }
+
+}
+
+/* NOVAKIT AUTHENTICATION */
+.auth-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 50% 0%, #39205f 0%, transparent 45%),
+    #0b0912;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 430px;
+  padding: 38px;
+  border: 1px solid #49365f;
+  border-radius: 24px;
+  background: rgba(24, 18, 36, 0.96);
+  box-shadow: 0 25px 80px #0008;
+}
+
+.auth-logo {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.auth-logo-icon {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 12px;
+  border-radius: 18px;
+  color: white;
+  background: linear-gradient(135deg, #a855f7, #6d28d9);
+}
+
+.auth-logo h1 {
+  font-size: 25px;
+  letter-spacing: 4px;
+  color: white;
+}
+
+.auth-logo p,
+.auth-heading p,
+.auth-footer {
+  color: #a69ab8;
+  font-size: 13px;
+  margin-top: 7px;
+}
+
+.auth-heading {
+  margin-bottom: 23px;
+}
+
+.auth-heading h2 {
+  color: white;
+  font-size: 25px;
+  margin-bottom: 7px;
+}
+
+.auth-input {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  margin-bottom: 15px;
+  border: 1px solid #49365f;
+  border-radius: 12px;
+  color: #b88aff;
+  background: #110d1b;
+}
+
+.auth-input input {
+  width: 100%;
+  min-width: 0;
+  border: none;
+  outline: none;
+  color: white;
+  background: transparent;
+  font-size: 14px;
+}
+
+.auth-input input::placeholder {
+  color: #83778f;
+}
+
+.auth-eye {
+  display: flex;
+  border: none;
+  color: #bca9d1;
+  background: transparent;
+  cursor: pointer;
+}
+
+.auth-submit {
+  width: 100%;
+  padding: 15px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  background: linear-gradient(110deg, #9333ea, #6d28d9);
+}
+
+.auth-submit:hover {
+  filter: brightness(1.15);
+}
+
+.auth-error {
+  color: #ff7777;
+  font-size: 13px;
+  margin: 5px 0 10px;
+}
+
+.auth-switch {
+  margin-top: 22px;
+  text-align: center;
+  color: #a69ab8;
+  font-size: 13px;
+}
+
+.auth-switch button {
+  border: none;
+  color: #c084fc;
+  background: transparent;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.auth-footer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 27px 20px;
+  }
+}
